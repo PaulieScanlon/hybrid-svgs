@@ -2,12 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-brand-gradient {
-  @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-lowlight via-brand-primary via-brand-highlight to-brand-secondary;
+.svg-center {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.border-rainbow-gradient {
-  display: inline-flex;
-  background-clip: content-box, border-box;
-  background-image: linear-gradient(#12071f, #12071f), linear-gradient(to right, #159bf3, #ffdf37, #fb8400, #ff0d6a);
+.delay-250 {
+  animation-delay: 250ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-750 {
+  animation-delay: 750ms;
+}
+
+.animate-bob {
+  animation-name: bob;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .animate-bob {
+    animation-name: none;
+  }
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
